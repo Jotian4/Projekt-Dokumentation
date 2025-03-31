@@ -1,0 +1,13 @@
+name: Beispiel mit Secret
+
+on: [push]
+
+jobs:
+  print-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v3
+
+      - name: Secret anzeigen
+        run: echo "Hallo ${{ secrets.MY_NAME }}"
